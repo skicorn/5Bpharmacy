@@ -1,0 +1,96 @@
+.Kdiv {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+  
+    .Kabigdiv {
+      border: 50px solid lightgray;
+      border-radius: 20px;
+      height: 90%;
+      width: 95%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      .Kamediumdiv {
+        height: 95%;
+        width: 95%;
+        font-size: 50px;
+        overflow-y: auto;
+        background-color: white !important;
+  
+        .Kamediumtable {
+          border: 1px solid black;
+          width:100%;
+          font-size: 15px;
+  
+          th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  
+  .Kformaddmedicine {
+      margin-top: 40px !important;
+      background-color: lightyellow;
+      width: 40%;
+      height: 55vh;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+  
+      .Kformaddmedicineheader {
+          display: flex;
+          justify-content: center;
+          font-size: 24px;
+          color: #5C6AC4;
+          margin-bottom: 20px;
+      }
+  
+      .Kformaddmedicineinfoadd {
+          margin-top: 21px;
+          margin-left: 30px;
+          width: 20%;
+          height: 7%;
+          background-color: aqua;
+      }
+  
+      .Kformaddmedicineinfo {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          height: 7vh;
+  
+          p {
+              flex: 1.5;
+              margin-right: 10px;
+              font-size: 25px;
+          }
+  
+          input, button {
+              flex: 2;
+              margin-right: 30px;
+              border-radius: 5px;
+          }
+      }
+  }
+
+  .buttonStyle{
+    display: flex;
+    justify-content: center;
+    height:5vh;
+    button{
+        margin-right:20px
+    }
+  }
+  

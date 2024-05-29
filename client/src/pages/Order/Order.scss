@@ -1,0 +1,124 @@
+#Koder {
+  .oderbuttonStyle {
+    display: flex;
+    justify-content: center;
+    height: 5vh;
+
+    button {
+      margin-right: 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .oderKdiv {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+
+    .oderKabigdiv {
+      border: 50px solid lightgray;
+      border-radius: 20px;
+      height: 90%;
+      width: 95%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .oderKamediumdiv {
+        height: 95%;
+        width: 95%;
+        font-size: 50px;
+        overflow-y: auto;
+        background-color: white !important;
+
+        .oderKamediumtable {
+          border: 1px solid black;
+          width: 100%;
+          font-size: 15px;
+
+          th,
+          td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  .oderKformaddoder {
+    margin-top: 30px !important;
+    background-color: lightyellow;
+    width: 40%;
+    height: 100vh;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+    .oderKformaddoderheader {
+      display: flex;
+      justify-content: center;
+      font-size: 24px;
+      color: #5c6ac4;
+      margin-bottom: 20px;
+    }
+
+    .oderKformaddoderinfoadd {
+      margin-top: 21px;
+      margin-left: 30px;
+      width: 20%;
+      height: 7%;
+      background-color: aqua;
+    }
+
+    .oderKformaddoderinfo {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 7vh;
+
+      p {
+        flex: 1.5;
+        margin-right: 10px;
+        font-size: 25px;
+      }
+
+      input,
+      button {
+        flex: 2;
+        margin-right: 30px;
+        border-radius: 5px;
+      }
+    }
+    .oderKformaddoderinfoa{
+      display:flex;
+      height:20vh;
+      .oderKformaddoderinfob{
+        width:30%;
+        height:20vh;
+        margin-right:10px;
+      }
+      .oderKformaddoderinfoc{
+        width:70%;
+        height:20vh;
+        padding-left: 70px;
+      }
+    }
+  }
+}

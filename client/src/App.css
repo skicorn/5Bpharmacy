@@ -9,11 +9,14 @@
 .Container{
   display: table;
   clear: both;
+  width:100%;
 }
 .Sidebar{
   float:left;
+  width:22%;
 }
 .Content{
   height: 100vh;
   float: left;
+  width:77.95% !important;
 }
