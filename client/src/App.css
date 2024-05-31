@@ -5,15 +5,20 @@
   text-align: center;
   height: 100vh;
   overflow: hidden;
+  background-color: #f1f3ce;
+
 }
 .Container{
-  display: table;
+  display: flex;
   clear: both;
 }
 .Sidebar{
   float:left;
+  height: 100vh;
 }
 .Content{
   height: 100vh;
-  float: left;
+  width: 100%;
+  float: right;
+  background-color: #f1f3ce;
 }
