@@ -1,5 +1,5 @@
 import './Header.css'
-import user from '../assets/user.svg'
+import user from '../assets/userinfo.svg'
 import { Link } from 'react-router-dom';
 function Header() {
     return (
@@ -10,7 +10,9 @@ function Header() {
                 </Link>
             </div>
             <div className="Userinfo">
-                <img src={user} id="user-avt" />
+                <div className='img'>
+                    <img src={user} id="user-avt" />
+                </div>
                 <p id="username">username</p>
             </div>
         </div>
