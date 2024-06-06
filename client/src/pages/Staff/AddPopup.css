@@ -1,0 +1,101 @@
+.add-popup{
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 111;
+    overflow: hidden;
+}
+.add-popup-inner{
+    position: relative;
+    padding: 10px;
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    max-height: 520px;
+    background-color: #D9D9D9;
+    z-index: 10000;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+ 
+}
+.add-popup-inner .add-button-popup{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+.add-title-popup{
+    font-size: 39px;
+    font-weight: 500;
+}
+.icon-close{
+    display: flex;
+    justify-content: right;
+    padding-right: 32px;
+}
+#close-icon{
+    background: #D9D9D9;
+    
+}
+.icon-close button{
+border: none;
+}
+.form-add label{
+    font-size: 20px;
+    font-weight: 700;
+    padding-left: 30px;
+    text-align: left;
+}
+.form-add input{
+    width: 600px;
+    border: none;
+    margin-left: 25px;
+    border-radius: 7px;
+}
+.form-add label,input{
+    
+    width: 100px;
+    
+}
+.form-item-add{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+.upload-item img{
+    height: 90px;
+    width: 90px;
+}
+.upload-image-add{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.upload-item{
+    padding-top: 10px;
+    height: 110px;
+    width: 110px;
+    background: #fff;
+    border-radius: 20px;
+}
+.upload-item:first-child {
+    margin-right: 40px;
+}
+.upload-item:last-child {
+    margin-left: 40px;
+}
+.btn-add-sp{
+    margin-top: 10px;
+    height: 30px;
+    width: 90px;
+    border-radius: 10px;
+    border: none;
+    background: #2F2971;
+    color: #fff;
+}
