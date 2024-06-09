@@ -5,8 +5,8 @@
   text-align: center;
   height: 100vh;
   overflow: hidden;
-  background-color: #f1f3ce;
-
+  background-color: rgb(252, 252, 253);
+  font-family: 'interregular',sans-serif;
 }
 .Container{
   display: flex;
@@ -20,5 +20,12 @@
   height: 100vh;
   width: 100%;
   float: right;
-  background-color: #f1f3ce;
+  background-color: rgb(252, 252, 253);
+  padding: 30px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+@font-face {
+  font-family: 'interregular';
+  src: url('./assets/font/Inter-Regular.otf') format('opentype');
 }

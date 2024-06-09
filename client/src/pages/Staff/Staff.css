@@ -1,103 +1,206 @@
-.staff-parent {
-    display: flex;
-    justify-content: center;
+.staff-all {
+    height: 750px;
+
+}
+
+.staff-content {
+
     height: 100%;
-    width: auto;
 
 }
 
-.staff-bg {
-    border-radius: 15px;
-    height: 520px;
-    width: 90%;
-    background-color: #b3abab;
-    overflow: hidden;
-    border-radius: 20px;
-}
-
-h1 {
-    margin-left: 20px;
+.head-staff {
     display: flex;
+    justify-content: space-between;
 }
 
-.search-wrapper {
-    display: flex;
-    justify-content: end;
-    margin-right: 50px;
-    margin-top: 20px;
-    margin-bottom: -17px;
+.h2 {
+    font-family: 'interbold';
 }
 
-.nav-search {
-    display: flex;
-    justify-content: end;
-
-}
-
-.input-search {
-    margin-right: -3px;
-    height: 35px;
-    width: 309px;
-    border: 4px solid #12C484;
-}
-
-.icon-search {
-    height: 35px;
-    width: 35px;
-    margin-right: 8px;
-    border: 4px solid #12C484;
-    background: #fff;
-
-}
-
-.icon-search img {
-    max-width: 20px;
-    max-height: 20px;
-
-}
-
-.staff-button-add button {
-    height: 35px;
-    width: 115px;
-    background-color: #12C484;
-    font-weight: 400;
-    color: #fff;
+.add-button {
+    height: 42.5px;
+    width: 72.5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: #12C484;
+    background: #12B76A;
+    border-radius: 6px;
 }
 
-.staff-list {
-    height: 430px;
-    overflow: hidden;
-
+.add-button button {
+    border: none;
+    color: white;
+    background: none;
 }
 
-.staff-list-context {
-    overflow: scroll;
-    height: 100%;
-    margin: 20px 50px 22px 50px;
+.multi-nav {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    margin-top: 15px;
+    width: auto;
+    gap: 20px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border: 1px solid #ccc;
 }
 
-.icon-action {
+.add-nav-search-1 {
+    display: flex;
+    height: 42px;
+    width: 1020px;
+    margin-left: 17px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.icon-search {
+    height: 42px;
+    width: 42px;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.icon-img {
+    width: 20px;
+}
+
+.input-search {
+    display: flex;
+    align-items: center;
+    height: auto;
+    width: 950px;
+    padding: 5px;
+}
+
+.input-s {
+    width: 940px;
+}
+
+.form-edit label,
+input {
+    width: 1000px;
+    outline: none;
+    border: none;
+}
+
+.add-nav-search-2 {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.add-nav-search-3 {
+    display: flex;
+
+}
+
+.text-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-search-3 {
+    color: #12B76A;
+}
+
+
+
+.checkbox-staff {
+    height: auto;
+    width: 40px;
+}
+
+.custom-table {
+    margin-top: -2px;
+    border: 1px solid #ccc;
 }
 
 .icon-action button {
     border: none;
-    background: #fff;
+    background-color: #fff;
 }
 
-.icon-action img {
-    height: 20px;
-    width: 20px;
-    margin: 0px 10px;
-
+.row1 {
+    height: 50px;
 }
 
-.staff-list-context thead th {
-    position: sticky;
-    top: 0;
+/* hidden
+.staff-table{
+    height: 500px;
+   
+} */
+.tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+    height: 70px;
+    text-align: center;
+}
+
+.custom-table th,
+.custom-table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.footer-staff {
+    display: flex;
+    justify-content: flex-end;
+    height: 52px;
+    gap: 20px;
+    border: 1px solid #ccc;
+    margin-top: -17px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.text-des {
+    font-size: 14px;
+    text-align: center;
+    vertical-align: center;
+    height: 52px;
+    line-height: 62px;
+}
+
+.sub-footer-1 {
+    height: 52px;
+    width: 103px;
+}
+
+.sub-footer-2 {}
+
+.sub-footer-3 {}
+
+.sub-footer-4 {
+    display: flex;
+}
+
+.icon-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+}
+
+.icon-footer img {
+    height: 12px;
+    width: 12px;
+    ;
+}
+
+.sub-footer-1,
+.sub-footer-2,
+.sub-footer-3,
+.sub-footer-4 {
+    display: flex;
+    align-items: center;
+    height: 52px;
+
 }

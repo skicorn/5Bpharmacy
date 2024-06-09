@@ -1,47 +1,53 @@
 .Dashboard_content {
-    margin: 20px;
     display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.Dashboard{
+    height: 100%;
 }
 
 h2 {
     display: flex;
-    margin-left: 20px;
+    font-family: 'interbold';
 }
 
 .minireport {
     display: flex;
     flex-direction: column;
-    background-color: #D9D9D9;
-    height: 180px;
-    width: 240px;
-    border-radius: 15px;
-    margin-right: 50px;
-}
-
-.minireport_title {
-    background-color: #12C484;
-    width: 100%;
-    height: 25%;
-    color: #ffffff;
-    border-radius: 15px 15px 0px 0px;
+    background-color: rgb(252,252,252);
+    --shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: var(--shadow);
+    height: 88px;
+    width: 355px;
+    border-radius: 8px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 18px;
+    margin-top: 30px;
 }
-
-.minireport_context {
+.minireport_content{
     display: flex;
+    padding: 15px;
+}
+.mini_img{
+    height: 56px;
+    width: 56px;
     justify-content: center;
     align-items: center;
-    height: 75%;
-    width: 100%;
-    font-size: 55px;
+    border-radius: 50%;
+    background-color: rgb(18, 196, 132);
+    display: flex;
+}
+.mini_img > img {
+    height: 25px;
+    width: 25px;
 }
 
 .largereport {
+    width: 100%;
     display: flex;
-    margin: 30px 20px;
+    justify-content: space-between;
+    margin-top: 50px;
 }
 
 .largereport_item {
@@ -49,10 +55,11 @@ h2 {
     flex-direction: column;
     background-color: #D9D9D9;
     height: 300px;
-    width: 400px;
-    border-radius: 15px;
+    width: 550px;
+    border-radius: 10px;
     overflow: hidden; 
-    margin-right: 130px;
+    --shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: var(--shadow);
 } 
 
 .largereport_title {
@@ -60,7 +67,7 @@ h2 {
     background-color: #12C484;
     width: 100%;
     color: #ffffff;
-    border-radius: 15px 15px 0px 0px;
+    border-radius: 10px 10px 0px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,5 +90,19 @@ h2 {
     overflow: hidden; 
     margin-bottom: 0px;
 }
+.mini_ctx{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left:20px;
+}
+
+.table>:not(caption)>*>*{
+    background-color: rgb(243, 244, 247);
+}
+@font-face {
+    font-family: 'interbold';
+    src: url('../../assets/font/Inter-Bold.otf') format('opentype');
+  }
 
 
