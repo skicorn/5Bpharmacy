@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './AddPopup.css';
 import upload from '../../assets/upload.svg'
 import axios from 'axios';
-
+//dâdasfaa
 function AddPopup(props) {
   const [values,setValues]=useState({
     name:'',
@@ -13,7 +13,7 @@ function AddPopup(props) {
   })
   const handleAdd=(e) =>{
     e.preventDefault();
-    axios.post('http://localhost:8081/staff',values)
+    axios.post('http://localhost:5000/staff',values)
     .then(res=>console.log(res))
     .catch(err=>console.log(err))
   }
