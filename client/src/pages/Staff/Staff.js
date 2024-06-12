@@ -182,9 +182,7 @@ function Staff() {
                             <div className="icon-footer"><img src={leftarrow}></img></div>
                             <div className="icon-footer"><img src={rightarrow}></img></div>
                         </div>
-                    </div>
-
-                                
+                    </div>      
                 </div>
             </div>
 

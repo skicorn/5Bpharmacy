@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'interbold';
+    src: url('../../assets/font/Inter-Bold.otf') format('opentype');
+  }
+.Order{
+    height: 100%;
+}
+
+h2 {
+    display: flex;
+    font-family: 'interbold';
+}

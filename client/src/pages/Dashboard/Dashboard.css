@@ -5,6 +5,7 @@
 }
 .Dashboard{
     height: 100%;
+    font-family: 'interregular', sans-serif;
 }
 
 h2 {
@@ -53,7 +54,7 @@ h2 {
 .largereport_item {
     display: flex;
     flex-direction: column;
-    background-color: #D9D9D9;
+    background-color: rgb(243, 244, 247);
     height: 300px;
     width: 550px;
     border-radius: 10px;
@@ -96,13 +97,11 @@ h2 {
     align-items: flex-start;
     margin-left:20px;
 }
-
-.table>:not(caption)>*>*{
-    background-color: rgb(243, 244, 247);
-}
 @font-face {
     font-family: 'interbold';
     src: url('../../assets/font/Inter-Bold.otf') format('opentype');
   }
-
-
+@font-face {
+    font-family: 'interregular';
+    src: url('../../assets/font/Inter-Regular.otf') format('opentype');
+}

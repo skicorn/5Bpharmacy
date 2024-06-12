@@ -25,7 +25,14 @@
   overflow: hidden;
   overflow-y: scroll;
 }
+.Content h2{
+  font-family: 'interbold', sans-serif;
+}
 @font-face {
   font-family: 'interregular';
   src: url('./assets/font/Inter-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'interbold';
+  src: url('./assets/font/Inter-Bold.otf') format('opentype');
 }

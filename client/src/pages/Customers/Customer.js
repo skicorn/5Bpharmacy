@@ -6,7 +6,7 @@ function Customer(){
     })
     return(
         <div>
-            <h1>THIS IS CUSTOMER PAGE</h1>
+            <h2>CUSTOMER</h2>
         </div>
     )
 }

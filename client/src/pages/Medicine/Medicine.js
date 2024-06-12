@@ -5,7 +5,7 @@ function Medicine(){
     })
     return(
         <div>
-            <h1>THIS IS MEDICINE PAGE</h1>
+            <h2>MEDICINE</h2>
         </div>
     )
 }
