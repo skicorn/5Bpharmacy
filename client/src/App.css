@@ -1,22 +1,24 @@
-* {
-   box-sizing: border-box;
+*{
+  box-sizing: border-box;
 }
 .App {
-   text-align: center;
-   height: 100vh;
-   background-color: #f1f3ce;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f1f3ce;
+
 }
-.Container {
-   display: flex;
-   clear: both;
+.Container{
+  display: flex;
+  clear: both;
 }
-.Sidebar {
-   float: left;
-   height: 100vh;
+.Sidebar{
+  float:left;
+  height: 100vh;
 }
-.Content {
-   height: 100vh;
-   width: 100%;
-   float: right;
-   background-color: #f1f3ce;
+.Content{
+  height: 100vh;
+  width: 100%;
+  float: right;
+  background-color: #f1f3ce;
 }
