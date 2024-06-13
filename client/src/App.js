@@ -11,9 +11,10 @@ import React, { useState, useLocation, useEffect, Component } from "react";
 import { BrowserRouter, Route, useHistory, Routes, Link, Router } from "react-router-dom";
 
 
-
 function App() {
-  
+  // const content={
+  //   width:'77.95%';
+  // }
   return (
     <BrowserRouter>
       <div className="App">
@@ -22,7 +23,7 @@ function App() {
           <div className="Sidebar">
             <Sidebar></Sidebar>
           </div>
-          <div className="Content" >
+          <div className="Content">
             <Routes>
               <Route path='/' element={<Dashboard/>}></Route>
               <Route path='/dashboard' element={<Dashboard/>}></Route>

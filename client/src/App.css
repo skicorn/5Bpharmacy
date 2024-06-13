@@ -11,9 +11,11 @@
 .Container{
   display: flex;
   clear: both;
+  width:100%;
 }
 .Sidebar{
   float:left;
+<<<<<<< HEAD
   height: 100vh;
 }
 .Content{
@@ -36,3 +38,12 @@
   font-family: 'interbold';
   src: url('./assets/font/Inter-Bold.otf') format('opentype');
 }
+=======
+  width:22%;
+}
+.Content{
+  height: 100vh;
+  float: left;
+  width:77.95% !important;
+}
+>>>>>>> ae4c07f5a62b3ce7ffda0523692f7448accf64ca
