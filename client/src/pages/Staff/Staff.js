@@ -19,7 +19,7 @@ import { Link, useAsyncError } from "react-router-dom";
 const aray = [
     {
         id: 1,
-        name: "Tony B",
+        name: "Bony B",
         email: "example@gmail.com",
         phone: "0909954546",
         role: "Dược sĩ",
@@ -28,7 +28,7 @@ const aray = [
     },
     {
         id: 2,
-        name: "Tony B",
+        name: "Aony B",
         email: "example@gmail.com",
         phone: "0909954546",
         role: "Dược sĩ",
@@ -36,7 +36,7 @@ const aray = [
     },
     {
         id: 3,
-        name: "Tony B",
+        name: "Cony B",
         email: "example@gmail.com",
         phone: "0909954546",
         role: "Dược sĩ",
@@ -44,7 +44,7 @@ const aray = [
     },
     {
         id: 4,
-        name: "Tony B",
+        name: "Eony B",
         email: "example@gmail.com",
         phone: "0909954546",
         role: "Dược sĩ",
@@ -52,7 +52,7 @@ const aray = [
     },
     {
         id: 5,
-        name: "Tony B",
+        name: "Fony B",
         email: "example@gmail.com",
         phone: "0909954546",
         role: "Dược sĩ",
@@ -60,7 +60,7 @@ const aray = [
     },
     {
         id: 6,
-        name: "Tony B",
+        name: "Gony B",
         email: "example@gmail.com",
         phone: "0909954546",
         role: "Dược sĩ",
@@ -79,11 +79,33 @@ function Staff() {
 
         document.title = "Staff Management"
     })
+
+
+
     const [staff, setStaff] = useState([]);
     const [addPopup, setAddPopup] = useState(false);
     const [editPopup, setEditPopup] = useState(false);
     const [deletePopup, setDeletePopup] = useState(false);
+    const [sortType, setSortType] = useState(null);
 
+
+    const sortedStaffdesc = [...staff].sort((a, b) => {
+        const Reversed = (sortType === 'asc') ? 1 : -1;
+        return Reversed * a.name.localeCompare(b.name);
+    });
+    const sortedStaffasc = [...staff].sort((a, b) => {
+        const isReversed = (sortType === 'desc') ? 1 : -1;
+        return isReversed * b.name.localeCompare(a.name);
+    });
+    const handleSortAZ = () => {
+        setSortType('asc');
+        setStaff([...staff].sort((a, b) => a.name.localeCompare(b.name)));
+    };
+
+    const handleSortZA = () => {
+        setSortType('desc');
+        setStaff([...staff].sort((a, b) => b.name.localeCompare(a.name)));
+    };
     return (
         <React.Fragment>
             <div className="staff-all">
@@ -110,20 +132,20 @@ function Staff() {
                             </div>
                             <div className="input-search"><input className="input-s" placeholder="Search ..." /></div>
                         </div>
-                        <div className="add-nav-search-2">
-                            <div className="icon-search">
-                                <img className="icon-img" src={menu}></img>
-                            </div>
-                            <div className="icon-search">
-                                <img className="icon-img" src={square}></img>
-                            </div>
-                        </div>
+
                         <div className="add-nav-search-3">
                             <div className="icon-search">
                                 <img className="icon-img" src={filter}></img>
                             </div>
                             <div className="text-search">
-                                <div className="text-search-3">Filter</div>
+                                <div className="text-search-3"><button className="button-search-3">Filter</button></div>
+
+                                <div className="button-dropdown">
+                                    <ul><li><button className="button-search-az" onClick={handleSortAZ}>A-Z</button></li>
+                                    <li><button className="button-search-az" onClick={handleSortZA}>Z-A</button></li></ul>
+                                    
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -131,9 +153,9 @@ function Staff() {
                         <table class="table custom-table">
                             <thead  >
                                 <tr className="row-1">
-                                    <th className="checkbox-staff">
+                                    {/* <th className="checkbox-staff">
                                         <input type="checkbox"></input>
-                                    </th>
+                                    </th> */}
 
                                     <th scope="col">Id</th>
                                     <th scope="col">Name</th>
@@ -151,7 +173,7 @@ function Staff() {
                                 {staff.map(item => (
 
                                     <tr>
-                                        <td className="checkbox-staff"><div><input type="checkbox"></input></div></td>
+                                        {/* <td className="checkbox-staff"><div><input type="checkbox"></input></div></td> */}
                                         <td>{item.id}</td>
                                         <td>{item.name}</td>
                                         <td>{item.email}</td>
@@ -178,13 +200,13 @@ function Staff() {
                         <div className="sub-footer-3">
                             <h4 className="text-des">1-6 of 6</h4>
                         </div>
-                        <div  className="sub-footer-4">
+                        <div className="sub-footer-4">
                             <div className="icon-footer"><img src={leftarrow}></img></div>
                             <div className="icon-footer"><img src={rightarrow}></img></div>
                         </div>
                     </div>
 
-                                
+
                 </div>
             </div>
 

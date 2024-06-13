@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './AddPopup.css';
 import upload from '../../assets/upload.svg'
 import axios from 'axios';
-//dâdasfaa
+
 function AddPopup(props) {
   const [values,setValues]=useState({
     name:'',
@@ -20,9 +20,10 @@ function AddPopup(props) {
   return (props.trigger) ? (
     <div className='add-popup'>
       <div className='add-popup-inner'>
-       
-        <div className='icon-close'><button id='close-icon' onClick={() => props.setTrigger(false)}>X</button></div>
+       <div className='header-add-popup'>
         <div className='add-title-popup'>ADD NEW STAFFS</div>
+        <div className='icon-close'><button id='close-icon' onClick={() => props.setTrigger(false)}>X</button></div>
+        </div>
         <div className='add-staff-content'>
           <div className='add-staff-form'>
             <form className='form-add' onSubmit={handleAdd}>
