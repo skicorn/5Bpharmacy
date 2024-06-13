@@ -17,55 +17,79 @@ import { Link, useAsyncError } from "react-router-dom";
 // import axios from 'axios'
 
 const aray = [
-    {
+    {   
         id: 1,
+        src:menu,
         name: "Bony B",
+        phone:"0909954546",
         email: "example@gmail.com",
-        phone: "0909954546",
+        salary:"200$",
+        idNumber:"12",
         role: "Dược sĩ",
-        present: 0,
-
+        adress:"25 Hill Cliton",
+        present: 0
     },
-    {
+    {   
         id: 2,
+        src:menu,
         name: "Aony B",
+        phone:"0909954546",
         email: "example@gmail.com",
-        phone: "0909954546",
+        salary:"200$",
+        idNumber:"12",
         role: "Dược sĩ",
+        adress:"25 Hill Cliton",
         present: 0
     },
-    {
+    {   
         id: 3,
+        src:menu,
         name: "Cony B",
+        phone:"0909954546",
         email: "example@gmail.com",
-        phone: "0909954546",
+        salary:"200$",
+        idNumber:"12",
         role: "Dược sĩ",
+        adress:"25 Hill Cliton",
         present: 0
     },
-    {
+    {   
         id: 4,
+        src:menu,
         name: "Eony B",
+        phone:"0909954546",
         email: "example@gmail.com",
-        phone: "0909954546",
+        salary:"200$",
+        idNumber:"12",
         role: "Dược sĩ",
+        adress:"25 Hill Cliton",
         present: 0
     },
-    {
+    {   
         id: 5,
-        name: "Fony B",
+        src:menu,
+        name: "Gony B",
+        phone:"0909954546",
         email: "example@gmail.com",
-        phone: "0909954546",
+        salary:"200$",
+        idNumber:"12",
         role: "Dược sĩ",
+        adress:"25 Hill Cliton",
         present: 0
     },
-    {
+    {   
         id: 6,
-        name: "Gony B",
+        src:menu,
+        name: "Hony B",
+        phone:"0909954546",
         email: "example@gmail.com",
-        phone: "0909954546",
+        salary:"200$",
+        idNumber:"12",
         role: "Dược sĩ",
+        adress:"25 Hill Cliton",
         present: 0
-    }
+    },
+
 ]
 
 function Staff() {
@@ -157,11 +181,15 @@ function Staff() {
                                         <input type="checkbox"></input>
                                     </th> */}
 
-                                    <th scope="col">Id</th>
+                                    
+                                    <th scope="col">Image</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Email</th>
                                     <th scope="col">Phone</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Salary</th>
+                                    <th scope="col">ID Number</th>
                                     <th scope="col">Role</th>
+                                    <th scope="col">Adress</th>
                                     <th style={{ color: "white" }} scope="col">Action</th>
                                 </tr>
 
@@ -170,15 +198,19 @@ function Staff() {
 
                                 {/* {data.map((staff,index)=> {
                                         return <tr key={index}> */}
-                                {staff.map(item => (
+                                {sortedStaffasc.map(item => (
 
                                     <tr>
                                         {/* <td className="checkbox-staff"><div><input type="checkbox"></input></div></td> */}
-                                        <td>{item.id}</td>
+                                        
+                                        <td><img src={`../media/${staff.image}`} alt={staff.name} width="25" /></td>
                                         <td>{item.name}</td>
-                                        <td>{item.email}</td>
                                         <td>{item.phone}</td>
+                                        <td>{item.email}</td>
+                                        <td>{item.salary}</td>
+                                        <td>{item.idNumber}</td>
                                         <td>{item.role}</td>
+                                        <td>{item.adress}</td>
                                         <td>
                                             <div className="icon-action">
                                                 <div onClick={() => setEditPopup(true)}><button><img src={threedot}></img></button></div>
