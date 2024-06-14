@@ -17,6 +17,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    justify-content: space-between;
 }
 .List-item {
     list-style: none;
@@ -24,18 +25,18 @@
     align-items: center; 
     justify-content: center;
     font-size: 16px;
-    height: 70px;
+    height: 63px;
     width: 100%;
     position: relative;
-    transition: 1s;
+    /* transition: 1s;
+    margin-bottom: 15px; */
 
 }
-.item-container , .item-container1{
+.item-container{
     width: 140px;
     display: flex;
     justify-content: flex-start;
     margin-left: 0;
-    transition: 1s;
 }
 
 .List-item-img {
@@ -43,10 +44,17 @@
     height: 20px;
     width: 20px;
 }
-.List-item:hover .item-container  {
-       margin-left: 10px;
+.List-item:focus   {
+       background-color: aqua;
 }
 .item-link{
     text-decoration: none;
     color: inherit; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.List-item:active{
+    background-color: black;
+    color: white;
 }

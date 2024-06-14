@@ -6,7 +6,7 @@ function Header() {
         <div className="Header">
             <div className="Logo">
                 <Link to='/' className='logo-link'>
-                    OKSHOP
+                   DRAGONCHAU PHARMACY
                 </Link>
             </div>
             <div className="Userinfo">

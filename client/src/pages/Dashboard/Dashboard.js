@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import React, { useState, useEffect } from 'react';
 import { SvgIcon } from '@mui/material';
 import bag from '../../assets/bag.svg'
+import bill from '../../assets/pills-solid.svg'
+import wallet from '../../assets/wallet-solid.svg'
 
 //fake data
 const arr = [
@@ -17,22 +19,26 @@ const arr = [
         name: 'paracetamol',
         expire: '29-05-2025',
         stock: 0
-    }, {
+    }, 
+    {
         id: 3,
         name: 'paracetamol',
         expire: '29-05-2025',
         stock: 0
-    }, {
+    },
+    {
         id: 4,
         name: 'paracetamol',
         expire: '29-05-2025',
         stock: 0
-    }, {
+    }, 
+    {
         id: 5,
         name: 'paracetamol',
         expire: '29-05-2025',
         stock: 0
-    }, {
+    }, 
+    {
         id: 6,
         name: 'paracetamol',
         expire: '29-05-2025',
@@ -83,7 +89,7 @@ function Dashboard() {
                 </div>
                 <div className='minireport'>
                     <div className='minireport_content'>
-                        <div className='mini_img'><img src={bag} /></div>
+                        <div className='mini_img'><img src={bill} /></div>
                         <div className='mini_ctx'>
                             <div className='mini_title'>Sản phẩm</div>
                             <div className="mini_num">6</div>
@@ -91,7 +97,7 @@ function Dashboard() {
                     </div>
                 </div>  <div className='minireport'>
                     <div className='minireport_content'>
-                        <div className='mini_img'><img src={bag} /></div>
+                        <div className='mini_img'><img src={wallet} /></div>
                         <div className='mini_ctx'>
                             <div className='mini_title'>Doanh thu</div>
                             <div className="mini_num">6</div>

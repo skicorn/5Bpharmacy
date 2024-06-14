@@ -95,7 +95,7 @@ const aray = [
 function Staff() {
     // const [data,setData]=useState([])
     useEffect(() => {
-        setStaff(aray.filter(item => item.present === 0));
+        setStaff(aray);
 
         // axios.get('http://localhost:8081/') 
         // .then(res=>setData(res.data))
@@ -158,9 +158,6 @@ function Staff() {
                         </div>
 
                         <div className="add-nav-search-3">
-                            <div className="icon-search">
-                                <img className="icon-img" src={filter}></img>
-                            </div>
                             <div className="text-search">
                                 <div className="text-search-3"><button className="button-search-3">Filter</button></div>
 
