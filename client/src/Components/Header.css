@@ -4,7 +4,7 @@
 .Header{
     display: flex;
     height: 100px;
-    background-color: #12C484;
+    background-color: rgb(16, 24, 40);
     justify-content: space-between;
 }
 .Logo{
@@ -22,17 +22,27 @@
     align-items: center;
     width: 140px;
     height: 100%;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-right: 30px;
 }
 #user-avt{
-    height: 40px;
-    width: 40px;
+    height: 20px;
+    width: 20px;
 }
 #username{
     color: #ffffff;
-    font-size: 20px;
+    font-size: 15px;
     margin: 0;
+}
+.img{
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    background-color: rgb(243, 244, 247);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-right: 10px;
 }
 @font-face {
     font-family: 'interbold';

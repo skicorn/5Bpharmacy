@@ -1,16 +1,18 @@
 import './Header.css'
-import user from '../assets/user.svg'
+import user from '../assets/userinfo.svg'
 import { Link } from 'react-router-dom';
 function Header() {
     return (
         <div className="Header">
             <div className="Logo">
                 <Link to='/' className='logo-link'>
-                    OKSHOP
+                   DRAGONCHAU PHARMACY
                 </Link>
             </div>
             <div className="Userinfo">
-                <img src={user} id="user-avt" />
+                <div className='img'>
+                    <img src={user} id="user-avt" />
+                </div>
                 <p id="username">username</p>
             </div>
         </div>

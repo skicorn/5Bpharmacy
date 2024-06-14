@@ -1,0 +1,106 @@
+.edit-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 112;
+}
+
+.edit-popup-inner {
+    position: relative;
+    padding: 32px 32px 20px 32px;
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    max-height: 520px;
+    background-color: #D9D9D9;
+    z-index: 10000;
+    border-radius: 10px;
+}
+
+.edit-popup-inner .edit-button-popup {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+.edit-title-popup {
+    font-size: 39px;
+    font-weight: 500;
+    margin-top: -40px;
+}
+
+.form-edit label {
+    font-size: 20px;
+    font-weight: 700;
+    padding-left: 30px;
+    text-align: left;
+}
+
+.form-edit input {
+    width: 600px;
+    border: none;
+    margin-left: 25px;
+    border-radius: 7px;
+}
+
+.form-edit label,
+input {
+
+    width: 100px;
+
+}
+
+.form-item-edit {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.upload-image-edit-staff {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 35px;
+}
+
+.form-item-image {
+    height: 30px;
+    width: 100px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.upload-item {
+    margin-left: 40px;
+    width: 110px;
+    height: 110px;
+}
+.btn-edit{
+    display: flex;
+    justify-content: center;
+    gap: 116px;
+    margin-top: 6px;
+}
+.btn-edit .btn-del{
+    background: rgb(174, 5, 5);
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+}
+
+.btn-edit .btn-edit{
+    background: #2F2971;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+}

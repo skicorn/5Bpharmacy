@@ -1,238 +1,245 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import './Staff.css';
-import icon_search from '../../assets/glass.svg';
-import pen_edit from '../../assets/pen.svg';
-import trash from '../../assets/trash.svg';
-//'react-bootstrap-table/css/react-bootstrap-table.css';
+import AddPopup from "./AddPopup";
+import EditPopup from "./EditPopup";
+import DeletePopup from "./DeletePopup";
+import gray_glass from '../../assets/gray-glass.svg';
+import threedot from '../../assets/threedot.png';
+import menu from '../../assets/menunew.png';
+import square from '../../assets/foursquare.png';
+import filter from '../../assets/filter.png';
+import triangle from '../../assets/triangle-down.png';
+import leftarrow from '../../assets/left-arrow.png';
+import rightarrow from '../../assets/right-arrow.png';
+
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { Link, useAsyncError } from "react-router-dom";
+// import axios from 'axios'
+
+const aray = [
+    {   
+        id: 1,
+        src:menu,
+        name: "Bony B",
+        phone:"0909954546",
+        email: "example@gmail.com",
+        salary:"200$",
+        idNumber:"12",
+        role: "Dược sĩ",
+        adress:"25 Hill Cliton",
+        present: 0
+    },
+    {   
+        id: 2,
+        src:menu,
+        name: "Aony B",
+        phone:"0909954546",
+        email: "example@gmail.com",
+        salary:"200$",
+        idNumber:"12",
+        role: "Dược sĩ",
+        adress:"25 Hill Cliton",
+        present: 0
+    },
+    {   
+        id: 3,
+        src:menu,
+        name: "Cony B",
+        phone:"0909954546",
+        email: "example@gmail.com",
+        salary:"200$",
+        idNumber:"12",
+        role: "Dược sĩ",
+        adress:"25 Hill Cliton",
+        present: 0
+    },
+    {   
+        id: 4,
+        src:menu,
+        name: "Eony B",
+        phone:"0909954546",
+        email: "example@gmail.com",
+        salary:"200$",
+        idNumber:"12",
+        role: "Dược sĩ",
+        adress:"25 Hill Cliton",
+        present: 0
+    },
+    {   
+        id: 5,
+        src:menu,
+        name: "Gony B",
+        phone:"0909954546",
+        email: "example@gmail.com",
+        salary:"200$",
+        idNumber:"12",
+        role: "Dược sĩ",
+        adress:"25 Hill Cliton",
+        present: 0
+    },
+    {   
+        id: 6,
+        src:menu,
+        name: "Hony B",
+        phone:"0909954546",
+        email: "example@gmail.com",
+        salary:"200$",
+        idNumber:"12",
+        role: "Dược sĩ",
+        adress:"25 Hill Cliton",
+        present: 0
+    },
+
+]
+
 function Staff() {
+    // const [data,setData]=useState([])
     useEffect(() => {
+        setStaff(aray);
+
+        // axios.get('http://localhost:8081/') 
+        // .then(res=>setData(res.data))
+        // .catch(err=>console.log(err));
+
         document.title = "Staff Management"
     })
+
+
+
+    const [staff, setStaff] = useState([]);
+    const [addPopup, setAddPopup] = useState(false);
+    const [editPopup, setEditPopup] = useState(false);
+    const [deletePopup, setDeletePopup] = useState(false);
+    const [sortType, setSortType] = useState(null);
+
+
+    const sortedStaffdesc = [...staff].sort((a, b) => {
+        const Reversed = (sortType === 'asc') ? 1 : -1;
+        return Reversed * a.name.localeCompare(b.name);
+    });
+    const sortedStaffasc = [...staff].sort((a, b) => {
+        const isReversed = (sortType === 'desc') ? 1 : -1;
+        return isReversed * b.name.localeCompare(a.name);
+    });
+    const handleSortAZ = () => {
+        setSortType('asc');
+        setStaff([...staff].sort((a, b) => a.name.localeCompare(b.name)));
+    };
+
+    const handleSortZA = () => {
+        setSortType('desc');
+        setStaff([...staff].sort((a, b) => b.name.localeCompare(a.name)));
+    };
     return (
         <React.Fragment>
-            <h1>STAFFS</h1>
-            <div className="staff-parent">
-                <div className="staff-bg">
-                    <div className="search-wrapper">
-                        <div className="nav-search">
-                            <input className="input-search" placeholder="Enter keywords" />
+            <div className="staff-all">
+                <div className="staff-content">
+                    {/* head staff */}
+                    <div className="head-staff">
+                        <h2>STAFFS</h2>
+                        <div className="add-button"><button onClick={() => setAddPopup(true)}>Add</button></div>
+                        <AddPopup trigger={addPopup} setTrigger={setAddPopup} >
+
+                        </AddPopup>
+                        <EditPopup trigger={editPopup} setTrigger={setEditPopup} >
+
+                        </EditPopup>
+                        <DeletePopup trigger={deletePopup} setTrigger={setDeletePopup} >
+                            {/* //onClick={()=>setAddPopup(true)} */}
+                        </DeletePopup>
+                    </div >
+                    {/* nav */}
+                    <div className="multi-nav">
+                        <div className="add-nav-search-1">
                             <div className="icon-search">
-                                <img src={icon_search} ></img>
+                                <img className="icon-img" src={gray_glass} ></img>
+                            </div>
+                            <div className="input-search"><input className="input-s" placeholder="Search ..." /></div>
+                        </div>
+
+                        <div className="add-nav-search-3">
+                            <div className="text-search">
+                                <div className="text-search-3"><button className="button-search-3">Filter</button></div>
+
+                                <div className="button-dropdown">
+                                    <ul><li><button className="button-search-az" onClick={handleSortAZ}>A-Z</button></li>
+                                    <li><button className="button-search-az" onClick={handleSortZA}>Z-A</button></li></ul>
+                                    
+                                </div>
+
                             </div>
                         </div>
-                        <div className="staff-button-add">Add Employer</div>
                     </div>
-                    <div className="staff-list">
-                        {/* <div className="child-list">
-                            <table className="table">
-                            <thead class="table-light">
-                                <tr>
-                                    <th>dadad</th>
-                                    <th>Id</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Role</th>
-                                    <th>Action</th>
+                    <div className="staff-table" >
+                        <table class="table custom-table">
+                            <thead  >
+                                <tr className="row-1">
+                                    {/* <th className="checkbox-staff">
+                                        <input type="checkbox"></input>
+                                    </th> */}
+
+                                    
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Phone</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Salary</th>
+                                    <th scope="col">ID Number</th>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">Adress</th>
+                                    <th style={{ color: "white" }} scope="col">Action</th>
                                 </tr>
-                                </thead>
-                            </table>
-                        </div> */}
-                        <div className="staff-list-context">
-                            <table class="table">
-                                <thead class="table-light" >
-                                    <tr >
-                                        <th>
-                                            <input className="checkbox-staff" type="checkbox"></input>
-                                        </th>
-                                        <th>Id</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Role</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+
+                            </thead>
+                            <tbody>
+
+                                {/* {data.map((staff,index)=> {
+                                        return <tr key={index}> */}
+                                {sortedStaffasc.map(item => (
 
                                     <tr>
-
-                                        <td><div><input className="checkbox-staff" type="checkbox"></input></div></td>
-                                        <td>001</td>
-                                        <td>Tony A</td>
-                                        <td>example@gmail.com</td>
-                                        <td>09341841</td>
-                                        <td>Dược sĩ</td>
-                                        <td><div className="icon-action">
-                                            <img src={pen_edit}></img>
-                                            <img src={trash}></img>
-                                        </div></td>
+                                        {/* <td className="checkbox-staff"><div><input type="checkbox"></input></div></td> */}
+                                        
+                                        <td><img src={`../media/${staff.image}`} alt={staff.name} width="25" /></td>
+                                        <td>{item.name}</td>
+                                        <td>{item.phone}</td>
+                                        <td>{item.email}</td>
+                                        <td>{item.salary}</td>
+                                        <td>{item.idNumber}</td>
+                                        <td>{item.role}</td>
+                                        <td>{item.adress}</td>
+                                        <td>
+                                            <div className="icon-action">
+                                                <div onClick={() => setEditPopup(true)}><button><img src={threedot}></img></button></div>
+                                            </div>
+                                        </td>
                                     </tr>
-                                    <tr>
-
-                                        <td><div><input className="checkbox-staff" type="checkbox"></input></div></td>
-                                        <td>002</td>
-                                        <td>Tony B</td>
-                                        <td>example@gmail.com</td>
-                                        <td>8301413</td>
-                                        <td>Quản lý</td>
-                                        <td><div className="icon-action">
-                                            <img src={pen_edit}></img>
-                                            <img src={trash}></img>
-                                        </div></td>
-                                    </tr>
-                                    <tr>
-
-                                        <td><div><input className="checkbox-staff" type="checkbox"></input></div></td>
-                                        <td>003</td>
-                                        <td>Tony C</td>
-                                        <td>example@gmail.com</td>
-                                        <td>987384783</td>
-                                        <td>Dược sĩ</td>
-                                        <td><div className="icon-action">
-                                            <img src={pen_edit}></img>
-                                            <img src={trash}></img>
-                                        </div></td>
-                                    </tr>
-                                    <tr>
-
-                                        <td><div><input className="checkbox-staff" type="checkbox"></input></div></td>
-                                        <td>004</td>
-                                        <td>Tony D</td>
-                                        <td>example@gmail.com</td>
-                                        <td>387140134</td>
-                                        <td>Dược sĩ</td>
-                                        <td><div className="icon-action">
-                                            <img src={pen_edit}></img>
-                                            <img src={trash}></img>
-                                        </div></td>
-                                    </tr>
-                                    <tr>
-
-                                        <td><div><input className="checkbox-staff" type="checkbox"></input></div></td>
-                                        <td>005</td>
-                                        <td>Tony E</td>
-                                        <td>example@gmail.com</td>
-                                        <td>458245254</td>
-                                        <td>Dược sĩ</td>
-                                        <td><div className="icon-action">
-                                            <img src={pen_edit}></img>
-                                            <img src={trash}></img>
-                                        </div></td>
-                                    </tr>
-                                    <tr>
-
-                                        <td><div><input className="checkbox-staff" type="checkbox"></input></div></td>
-                                        <td>006</td>
-                                        <td>Tony F</td>
-                                        <td>example@gmail.com</td>
-                                        <td>90482555</td>
-                                        <td>Dược sĩ</td>
-                                        <td><div className="icon-action">
-                                            <img src={pen_edit}></img>
-                                            <img src={trash}></img>
-                                        </div></td>
-                                    </tr>
-                                    <tr>
-
-                                        <td><div><input className="checkbox-staff" type="checkbox"></input></div></td>
-                                        <td>007</td>
-                                        <td>Tony G</td>
-                                        <td>example@gmail.com</td>
-                                        <td>082254</td>
-                                        <td>Dược sĩ</td>
-                                        <td><div className="icon-action">
-                                            <img src={pen_edit}></img>
-                                            <img src={trash}></img>
-                                        </div></td>
-                                    </tr>
-                                    <tr>
-
-                                        <td><div><input className="checkbox-staff" type="checkbox"></input></div></td>
-                                        <td>008</td>
-                                        <td>Tony H</td>
-                                        <td>example@gmail.com</td>
-                                        <td>458745</td>
-                                        <td>Dược sĩ</td>
-                                        <td><div className="icon-action">
-                                            <img src={pen_edit}></img>
-                                            <img src={trash}></img>
-                                        </div></td>
-                                    </tr>
-                                    <tr>
-
-                                        <td><div><input className="checkbox-staff" type="checkbox"></input></div></td>
-                                        <td>009</td>
-                                        <td>Tony I</td>
-                                        <td>example@gmail.com</td>
-                                        <td>48528452</td>
-                                        <td>Dược sĩ</td>
-                                        <td><div className="icon-action">
-                                            <img src={pen_edit}></img>
-                                            <img src={trash}></img>
-                                        </div></td>
-                                    </tr>
-                                    <tr>
-
-                                        <td><div><input className="checkbox-staff" type="checkbox"></input></div></td>
-                                        <td>010</td>
-                                        <td>Tony J</td>
-                                        <td>example@gmail.com</td>
-                                        <td>425725</td>
-                                        <td>Nhân viên kho </td>
-                                        <td><div className="icon-action">
-                                            <img src={pen_edit}></img>
-                                            <img src={trash}></img>
-                                        </div></td>
-                                    </tr>
-                                    <tr>
-
-                                        <td><div><input className="checkbox-staff" type="checkbox"></input></div></td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>Otto</td>
-                                        <td><div className="icon-action">
-                                            <img src={pen_edit}></img>
-                                            <img src={trash}></img>
-                                        </div></td>
-                                    </tr>
-                                    <tr>
-
-                                        <td><div><input className="checkbox-staff" type="checkbox"></input></div></td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>Otto</td>
-                                        <td><div className="icon-action">
-                                            <img src={pen_edit}></img>
-                                            <img src={trash}></img>
-                                        </div></td>
-                                    </tr>
-                                    <tr>
-
-                                        <td><div><input className="checkbox-staff" type="checkbox"></input></div></td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>Otto</td>
-                                        <td><div className="icon-action">
-                                            <img src={pen_edit}></img>
-                                            <img src={trash}></img>
-                                        </div></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div className="footer-staff">
+                        <div className="sub-footer-1">
+                            <h4 className="text-des">Rows per page:</h4>
+                        </div>
+                        <div className="sub-footer-2">
+                            <h4 className="text-des">10</h4>
+                            <div className="icon-footer"><img src={triangle}></img></div>
+                        </div>
+                        <div className="sub-footer-3">
+                            <h4 className="text-des">1-6 of 6</h4>
+                        </div>
+                        <div className="sub-footer-4">
+                            <div className="icon-footer"><img src={leftarrow}></img></div>
+                            <div className="icon-footer"><img src={rightarrow}></img></div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
 
-        </React.Fragment>
+        </React.Fragment >
     )
 }
 export default Staff;
