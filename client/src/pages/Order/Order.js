@@ -6,6 +6,9 @@ import trash from '../../assets/trash.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import gray_glass from '../../assets/gray-glass.svg';
 import threedot from '../../assets/threedot.png';
+
+import Dropdown from 'react-bootstrap/Dropdown';
+import 'bootstrap/dist/css/bootstrap.min.css'
 function Order() {
   useEffect(() => {
     setOrder(ordersData);
