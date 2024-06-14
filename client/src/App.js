@@ -1,41 +1,53 @@
-import './App.css'
-import Sidebar from './Components/Sidebar'
-import Header from './Components/Header'
-import Setting from './pages/AppSetting/Setting'
-import Dashboard from './pages/Dashboard/Dashboard'
-import Customer from './pages/Customers/Customer'
-import Staff from './pages/Staff/Staff'
-import Order from './pages/Order/Order'
-import Medicine from './pages/Medicine/Medicine'
-import Login from './pages/Login/Login'
-import React, { useState, useLocation, useEffect, Component } from 'react'
-import { BrowserRouter, Route, useHistory, Routes, Link, Router } from 'react-router-dom'
+import './App.css';
+import React from 'react';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import Sidebar from './Components/Sidebar';
+import Header from './Components/Header';
+import Setting from './pages/AppSetting/Setting';
+import Dashboard from './pages/Dashboard/Dashboard';
+import Customer from './pages/Customers/Customer';
+import Staff from './pages/Staff/Staff';
+import Order from './pages/Order/Order';
+import Medicine from './pages/Medicine/Medicine';
+import Login from './pages/Login/Login';
 
-function App() {
+const App = () => {
    return (
       <BrowserRouter>
          <div className='App'>
-            <Header></Header>
-            <section className='Container'>
-               <div className='Sidebar'>
-                  <Sidebar></Sidebar>
-               </div>
-               <div className='Content'>
-                  <Routes>
-                     <Route path='/' element={<Dashboard />}></Route>
-                     <Route path='/dashboard' element={<Dashboard />}></Route>
-                     <Route path='/settings' element={<Setting />}></Route>
-                     <Route path='/customers' element={<Customer />}></Route>
-                     <Route path='/orders' element={<Order />}></Route>
-                     <Route path='/medicines' element={<Medicine />}></Route>
-                     <Route path='/staffs' element={<Staff />}></Route>
-                     <Route path='/login' element={<Login />}></Route>
-                  </Routes>
-               </div>
-            </section>
+            <Routes>
+               {/* Default route for Login */}
+               <Route path='/' element={<Navigate to='/login' replace />} />
+               <Route path='/login' element={<Login />} />
+               <Route path='/app/*' element={<AuthenticatedApp />} />
+            </Routes>
          </div>
       </BrowserRouter>
-   )
-}
+   );
+};
 
-export default App
+const AuthenticatedApp = () => {
+   return (
+      <>
+         <Header />
+         <section className='Container'>
+            <div className='Sidebar'>
+               <Sidebar />
+            </div>
+            <div className='Content'>
+               <Routes>
+                  <Route path='/' element={<Dashboard />} />
+                  <Route path='/dashboard' element={<Dashboard />} />
+                  <Route path='/settings' element={<Setting />} />
+                  <Route path='/customers' element={<Customer />} />
+                  <Route path='/orders' element={<Order />} />
+                  <Route path='/medicines' element={<Medicine />} />
+                  <Route path='/staffs' element={<Staff />} />
+               </Routes>
+            </div>
+         </section>
+      </>
+   );
+};
+
+export default App;

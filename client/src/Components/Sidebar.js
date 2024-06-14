@@ -12,37 +12,37 @@ import { Link } from 'react-router-dom';
 const sidebar = [
     {
         name: 'Dashboard',
-        link: '/dashboard',
+        link: '/app/dashboard',
         img: dashboard
     },
     {
         name: 'Order',
-        link: '/orders',
+        link: '/app/orders',
         img: order
     },
     {
         name: 'Medicine',
-        link: '/medicines',
+        link: '/app/medicines',
         img: medicine
     },
     {
         name: 'Staff',
-        link: '/staffs',
+        link: '/app/staffs',
         img: staff
     },
     {
         name: 'Customers',
-        link: '/customers',
+        link: '/app/customers',
         img: staff
     },
     {
         name: 'Update',
-        link: '/updatehistory',
+        link: '/app/updatehistory',
         img: history
     },
     {
         name: 'Setting',
-        link: '/settings',
+        link: '/app/settings',
         img: setting
     },
     {
