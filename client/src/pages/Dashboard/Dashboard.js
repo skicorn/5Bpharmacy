@@ -1,7 +1,6 @@
 import '../Dashboard/Dashboard.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React, { useState, useEffect } from 'react';
-import { SvgIcon } from '@mui/material';
 import bag from '../../assets/bag.svg'
 import bill from '../../assets/pills-solid.svg'
 import wallet from '../../assets/wallet-solid.svg'
