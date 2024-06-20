@@ -82,7 +82,7 @@ input[type='password'] {
    color: black;
 }
 
-button {
+.button-login {
    background-color: #20c997;
    color: rgb(255, 255, 255);
    height: 50px;
@@ -92,7 +92,7 @@ button {
    border: none;
 }
 
-button:hover {
+.button-login:hover {
    opacity: 0.8;
 }
 

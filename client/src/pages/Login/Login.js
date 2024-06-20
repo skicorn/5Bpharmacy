@@ -60,7 +60,7 @@ const Login = () => {
                      alignItems: 'center',
                   }}
                >
-                  <button type='button' onClick={handleSubmit} style={{ width: '40%' }}>
+                  <button className='button-login' type='' onClick={handleSubmit} style={{ width: '40%' }}>
                      Đăng Nhập
                   </button>
                   <p>Bạn quên mật khẩu?</p>
