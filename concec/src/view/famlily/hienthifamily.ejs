@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List of Families</title>
+  </head>
+  <body>
+    <h1>List of Families</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Namefamily</th>
+          <th>EmployeeName</th>
+          <th>Addressfamily</th>
+          <th>Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>dsadsafsda</td>
+          <td>fcwsfwefwsf</td>
+          <td>ưqeqweqw</td>
+          <td>
+            <img
+              src="xyz/logotiecuoi.png"
+              alt="Family Image"
+              style="width: 100px; height: auto"
+            />
+          </td>
+        </tr>
+        <% for (let i = 0; i < dataTable.length; i++) { %>
+          <tr>
+            <td><%= dataTable[i].Namefamily %></td>
+            <td><%= dataTable[i].EmployeeName %></td>
+            <td><%= dataTable[i].addressfamily %></td>
+            <td>
+              <img
+                src="<%= dataTable[i].imagePath %>"
+                alt="Family Image"
+                style="width: 100px; height: auto"
+              />
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </body>
+</html>

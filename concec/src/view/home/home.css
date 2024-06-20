@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+}
+
+.KHheader {
+  width: 100%;
+}
+
+.KHheader .KHheadera {
+  color: red;
+  text-align: center;
+  width: 100%;
+  height: 17vh;
+  margin: 0;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid gray;
+}
+
+.KHheader .KHheadera .KHheaderatext {
+  margin: 0;
+  height: 7vh;
+}
+
+.KHheader .KHheadera .KHheaderaimg {
+  width: 15%;
+  height: 10vh;
+}
+
+.Home_body {
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Home_body_div {
+  width: 25%;
+  height: 35vh;
+  background-color: blue;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}

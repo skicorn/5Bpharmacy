@@ -11,10 +11,11 @@ function Medicine() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    setMedicine(medicineData);
     document.title = 'Medicine Management';
   }, []);
-
-  const [medicine, setMedicine] = useState([
+  const [medicine, setMedicine] = useState([]);
+  const medicineData = [
     {
       MedicineID: 1,
       IMG: 'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/panadol/vi_vn/vietnamproduct/panadol_regular_pack_shot_blue/product_detail/Desktop-455x455.png?auto=format',
@@ -42,40 +43,31 @@ function Medicine() {
     {
       MedicineID: 4,
       IMG: 'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/panadol/vi_vn/vietnamproduct/panadol_regular_pack_shot_blue/product_detail/Desktop-455x455.png?auto=format',
-      Name: 'Medicine 4',
-      Description: 'Description of Medicine 4',
-      Price: 18.99,
+      Name: 'Medicine 3',
+      Description: 'Description of Medicine 3',
+      Price: 20.99,
       Expire: '2023-09-15',
     },
     {
       MedicineID: 5,
       IMG: 'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/panadol/vi_vn/vietnamproduct/panadol_regular_pack_shot_blue/product_detail/Desktop-455x455.png?auto=format',
-      Name: 'Medicine 5',
-      Description: 'Description of Medicine 5',
-      Price: 22.99,
+      Name: 'Medicine 3',
+      Description: 'Description of Medicine 3',
+      Price: 20.99,
       Expire: '2023-09-15',
     },
     {
       MedicineID: 6,
       IMG: 'https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/panadol/vi_vn/vietnamproduct/panadol_regular_pack_shot_blue/product_detail/Desktop-455x455.png?auto=format',
-      Name: 'Medicine 6',
-      Description: 'Description of Medicine 6',
-      Price: 16.99,
+      Name: 'Medicine 3',
+      Description: 'Description of Medicine 3',
+      Price: 20.99,
       Expire: '2023-09-15',
     },
-  ]);
+  ];
 
-  const addMedicine = () => {
-    // Replace with actual API call if needed
-    axios.get('http://localhost:6965/')
-      .then(response => {
-        console.log('API response:', response);
-        // Handle response data if needed
-      })
-      .catch(error => {
-        console.error('Error adding medicine:', error);
-        // Handle error appropriately
-      });
+ const addmedicine = () => {
+    navigate('/app/medicines/addmedicines');
   };
 
   return (
@@ -86,14 +78,14 @@ function Medicine() {
           <div className="head-order">
             <h2>ORDERS</h2>
             <div className="add-button">
-              <button onClick={addMedicine}>Add</button>
+              <button onClick={addmedicine}>Add</button>
             </div>
           </div>
           {/* nav */}
           <div className="multi-nav">
             <div className="add-nav-search-1">
               <div className="icon-search">
-                <img className="icon-img" src={gray_glass} alt="search icon" />
+                <img className="icon-img" src={gray_glass}></img>
               </div>
               <div className="input-search">
                 <input className="input-s" placeholder="Search ..." />
@@ -120,9 +112,12 @@ function Medicine() {
             </div>
           </div>
           <div className="order-table">
-            <table className="table custom-table">
+            <table class="table custom-table">
               <thead>
                 <tr className="row-1">
+                  {/* <th className="checkbox-staff">
+                                <input type="checkbox"></input>
+                            </th> */}
                   <th scope="col">MedicineID</th>
                   <th scope="col">IMG</th>
                   <th scope="col">Name</th>
@@ -135,13 +130,14 @@ function Medicine() {
                 </tr>
               </thead>
               <tbody>
+                {/* {data.map((staff,index)=> {
+                                return <tr key={index}> */}
                 {medicine.map((item) => (
-                  <tr key={item.MedicineID}>
+                  <tr>
                     <td>{item.MedicineID}</td>
                     <td>
                       <img
                         src={item.IMG}
-                        alt={item.Name}
                         style={{ height: '100px', width: '100px' }}
                       />
                     </td>
@@ -153,7 +149,7 @@ function Medicine() {
                       <div className="icon-action">
                         <div>
                           <button>
-                            <img src={threedot} alt="menu" />
+                            <img src={threedot}></img>
                           </button>
                         </div>
                       </div>
